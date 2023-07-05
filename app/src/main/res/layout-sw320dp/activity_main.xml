@@ -10,25 +10,13 @@
         android:id="@+id/textoEscolhaODado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="48dp"
         android:text="@string/escolha_o_dado"
-        android:textSize="24sp"
-        android:fontFamily="@font/audiowide"
+        android:textSize="18sp"
+        android:fontFamily="@font/neutro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textoView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="@string/valor_sorteado"
-        android:textSize="18sp"
-        android:fontFamily="@font/audiowide"
-        app:layout_constraintBottom_toTopOf="@id/botao"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/botao"
@@ -37,8 +25,8 @@
         android:layout_marginTop="16dp"
         android:text="@string/lancar_dado"
         android:textSize="18sp"
-        android:fontFamily="@font/audiowide"
-        android:layout_marginBottom="64dp"
+        android:fontFamily="@font/neutro"
+        android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -47,7 +35,7 @@
         android:id="@+id/chipGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/textoEscolhaODado"
+        app:layout_constraintBottom_toTopOf="@+id/botao"
         android:layout_margin="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,10 +43,16 @@
         app:singleSelection="true">
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/d4"
+            android:id="@+id/d1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:text="@string/d1" />
+        <com.google.android.material.chip.Chip
+            android:id="@+id/d4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             style="@style/Widget.MaterialComponents.Chip.Choice"
             android:text="@string/d4" />
 
@@ -100,13 +94,14 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="240dp"
-        android:layout_height="240dp"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
         android:src="@drawable/d4_1"
-        app:layout_constraintBottom_toTopOf="@+id/textoView"
+        android:contentDescription="@string/dado_imagem"
+        app:layout_constraintBottom_toTopOf="@+id/botao"
         android:layout_marginBottom="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chipGroup"/>
+        app:layout_constraintTop_toBottomOf="@+id/textoEscolhaODado"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
